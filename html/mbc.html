@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mbc.html</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="alternate" type="html" href="test.html">
+</head>
+<body>
+  {% include 'include/top_menu.html' %}
+
+    <p>
+        <a href="add_news">뉴스 정보 추가</a>
+    </p>
+    <p>
+        <form action="show_point" method="get">
+            <input type="text" name="title"/>
+            <button type="submit">검색</button>
+            <a href="#">초기화</a>
+        </form>
+    </p>
+    <table border ='1'>
+        <thead>
+            <th>번호</th>
+            <th>제목</th>
+            <th>날짜</th>
+
+
+         </thead>
+            <!--rentder_templete을 통해 변수를 키워드로 넘겨 줬던 data_list-->
+                    {% for temp_dic in data_list %}
+            <tr>
+                <!--첫번째 테이블 news_idx값-->
+                <td>{{temp_dic.news_idx}}</td>
+                <td>
+                <a href = "news_info_mbc?news_idx={{temp_dic.news_idx}}">{{temp_dic.title}}
+                </td>
+                <td>{{temp_dic.pubDate}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+    <!-- <h2>댓글창</h2>
+    <form action="add_news_pro" method="post">
+      닉네임 :   <input type="text" name = "user_name"><br>
+      비밀번호 : <input type="passwd" name = "user_pwd"><br>
+      <textarea row =100; cols=100; name = "user_comment"></textarea>
+      <button type='submit'>저장</button> -->
+    </form>
+    <p>
+        <a href="/">메인화면</a>
+    </p>
+</body>
+</html>
