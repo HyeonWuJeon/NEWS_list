@@ -11,7 +11,7 @@
   <link rel="alternate" type="html" href="test.html">
 </head>
 <!-- 상단 메뉴 -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
   <a class="navbar-brand" href="/">로고</a>
 
@@ -30,9 +30,6 @@
   <!-- 오른쪽 메뉴 -->
   <ul class="navbar-nav ml-auto">
     {% if session['login'] == 'YES' %}
-    <li class="nav-item">
-      <a class="nav-link" href="../user/user_modify">정보수정</a>
-    </li>
     <li class="nav-item">
       <a class="nav-link" href="/logout">로그아웃</a>
     </li>

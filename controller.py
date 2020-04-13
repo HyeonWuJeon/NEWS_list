@@ -1,7 +1,7 @@
 # database파일 손보기.
 #마지막 실행파일
 from flask import Flask, render_template, request, Blueprint,session,redirect,url_for
-import database as db
+# import database as db
 import sbs.sbs_dao as sbdb
 import kbs.kbs_dao as kbdb
 import mbc.mbc_dao as mbdb
@@ -73,7 +73,7 @@ def news_info_sbs() :
     # 파라미터 데이터 추출
     news_idx = request.args.get('news_idx')
     # 추출한 데이터정보 삽입
-    result_dic = db.get_news_info_sbs(news_idx)
+    result_dic = sbdb.get_news_info(news_idx)
 
     html = render_template('info_html/news_info_sbs.html', data_dic=result_dic)
     return html
@@ -84,7 +84,7 @@ def news_info_kbs() :
     # 파라미터 데이터 추출
     news_idx = request.args.get('news_idx')
     # 추출한 데이터정보 삽입
-    result_dic = db.get_news_info_kbs(news_idx)
+    result_dic = kbdb.get_news_info(news_idx)
 
     html = render_template('info_html/news_info_kbs.html', data_dic=result_dic)
     return html
@@ -98,7 +98,7 @@ def news_info_mbc() :
 
     # 추출한 데이터정보 삽입
     # 넘어간 정보를 데이터에 삽입한다.
-    result_dic = db.get_news_info_mbc(news_idx)
+    result_dic = mbdb.get_news_info(news_idx)
 
     # 데이터키워드인자를 탬플릿 폴더에 전달한다.
     html = render_template('info_html/news_info_mbc.html', data_dic=result_dic)

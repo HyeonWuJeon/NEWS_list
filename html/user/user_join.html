@@ -48,17 +48,22 @@
                 $('#user_pw').focus()   // 지정된 태그에 포커스를 준다.
                 return
             }
-            // if(is_check_id == false){
-            //     alert('아이디 중복확인 해주세요')
-            //     $("#user_id").focus()
-            //     return
-            // }
+
+
+            if(is_check_id == false){
+                alert('아이디 중복확인 해주세요')
+                $("#user_id").focus()
+                return
+            }
+
 
             // ajax 통신
             param = {
+
                 user_id : user_id,
                 user_name : user_name,
                 user_pw : user_pw
+
             }
 
             $.ajax({
