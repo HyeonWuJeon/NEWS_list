@@ -27,6 +27,6 @@
 
 <br>
 
-> *네이버 API
+>* 네이버 API
 https://developers.naver.com/docs/search/blog/
 
