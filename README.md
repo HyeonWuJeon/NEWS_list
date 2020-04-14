@@ -2,7 +2,6 @@
 <br>
 
 ## 특정 정당 정치뉴스 모음집 
-<br>
 
 ### PREVIEW
 <br>
@@ -25,3 +24,9 @@
 - Python : 3.6 
 - Editor : Atom
 - Git
+
+<br>
+
+> *네이버 API
+https://developers.naver.com/docs/search/blog/
+
